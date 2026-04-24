@@ -479,6 +479,117 @@ kbd{
 .cta__btns{display:flex;align-items:center;justify-content:center;gap:var(--sp3);flex-wrap:wrap}
 .cta__note{margin-top:var(--sp4);font-size:.75rem;color:var(--txt-3)}
 
+/* ===== AI 체험 섹션 ===== */
+.ai-demo-bg{background:var(--bg-surface)}
+.ai-demo-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:var(--sp6);
+  align-items:start
+}
+@media(max-width:768px){.ai-demo-grid{grid-template-columns:1fr}}
+
+.ai-input-box{
+  background:#fff;border:1.5px solid var(--border);border-radius:var(--r-lg);
+  overflow:hidden;box-shadow:0 4px 20px rgba(99,102,241,0.08)
+}
+.ai-input-header{
+  padding:var(--sp4) var(--sp5);border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:8px;
+  font-size:.8125rem;font-weight:700;color:var(--txt-2)
+}
+.ai-textarea{
+  width:100%;min-height:220px;padding:var(--sp4) var(--sp5);
+  border:none;outline:none;resize:none;
+  font-family:inherit;font-size:.9rem;color:var(--txt-1);
+  line-height:1.7;background:transparent
+}
+.ai-textarea::placeholder{color:var(--txt-3)}
+.ai-examples{
+  padding:var(--sp3) var(--sp5);border-top:1px solid var(--border);
+  display:flex;flex-wrap:wrap;gap:var(--sp2)
+}
+.ai-ex-btn{
+  padding:5px 12px;border:1px solid var(--border);border-radius:var(--r-full);
+  font-size:.75rem;font-weight:600;color:var(--txt-2);
+  background:#fff;cursor:pointer;font-family:inherit;transition:var(--ease)
+}
+.ai-ex-btn:hover{border-color:var(--primary);color:var(--primary);background:rgba(99,102,241,.05)}
+.ai-submit-wrap{padding:var(--sp4) var(--sp5)}
+.ai-submit{
+  width:100%;height:48px;border:none;border-radius:var(--r);
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:#fff;font-family:inherit;font-size:.9375rem;font-weight:700;
+  cursor:pointer;transition:var(--ease);
+  box-shadow:0 4px 16px rgba(99,102,241,0.25);
+  display:flex;align-items:center;justify-content:center;gap:8px
+}
+.ai-submit:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(99,102,241,0.3)}
+.ai-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+
+.ai-result-box{
+  background:#fff;border:1.5px solid var(--border);border-radius:var(--r-lg);
+  overflow:hidden;box-shadow:0 4px 20px rgba(99,102,241,0.08);
+  min-height:340px;display:flex;flex-direction:column
+}
+.ai-result-header{
+  padding:var(--sp4) var(--sp5);border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:8px;
+  font-size:.8125rem;font-weight:700;color:var(--primary)
+}
+.ai-result-body{padding:var(--sp5);flex:1}
+
+.ai-empty{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  height:260px;color:var(--txt-3);font-size:.875rem;gap:12px
+}
+.ai-empty-icon{font-size:2.5rem;opacity:.4}
+
+.ai-loading{display:none;flex-direction:column;gap:var(--sp3);padding:var(--sp2) 0}
+.ai-loading-bar{
+  height:12px;border-radius:6px;
+  background:linear-gradient(90deg,#f0f0ff 25%,#e0e0ff 50%,#f0f0ff 75%);
+  background-size:200% 100%;
+  animation:shimmer 1.4s infinite
+}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+.ai-answer{display:none;flex-direction:column;gap:var(--sp4)}
+.ai-summary-card{
+  background:linear-gradient(135deg,rgba(99,102,241,.06),rgba(124,58,237,.04));
+  border:1.5px solid rgba(99,102,241,.15);border-radius:var(--r);
+  padding:var(--sp4)
+}
+.ai-card-label{
+  font-size:.7rem;font-weight:800;color:var(--primary);
+  letter-spacing:.06em;text-transform:uppercase;margin-bottom:var(--sp2)
+}
+.ai-card-text{font-size:.9rem;color:var(--txt-1);line-height:1.65;font-weight:500}
+.ai-points{display:flex;flex-direction:column;gap:var(--sp2)}
+.ai-point{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:10px 12px;border-radius:var(--r-sm);background:var(--bg-surface)
+}
+.ai-point-dot{
+  width:20px;height:20px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.65rem;font-weight:800;flex-shrink:0;margin-top:1px
+}
+.dot-1{background:rgba(99,102,241,.15);color:var(--primary)}
+.dot-2{background:rgba(124,58,237,.15);color:var(--secondary)}
+.dot-3{background:rgba(8,145,178,.15);color:var(--accent)}
+.ai-point-text{font-size:.8375rem;color:var(--txt-1);line-height:1.55}
+.ai-risk-row{
+  display:flex;align-items:center;gap:10px;
+  padding:8px 12px;border-radius:var(--r-sm);
+  font-size:.8125rem;font-weight:600
+}
+.risk-red{background:rgba(220,38,38,.07);color:var(--error);border-left:3px solid var(--error)}
+.risk-yellow{background:rgba(217,119,6,.07);color:var(--warning);border-left:3px solid var(--warning)}
+.risk-green{background:rgba(22,163,74,.07);color:var(--success);border-left:3px solid var(--success)}
+
+/* 커서 깜빡임 */
+.cursor{display:inline-block;width:2px;height:1em;background:var(--primary);margin-left:2px;animation:blink .7s infinite;vertical-align:text-bottom}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
 /* ===== FOOTER ===== */
 .footer{
   padding-block:var(--sp9);
@@ -782,6 +893,75 @@ kbd{
   </div>
 </section>
 
+<!-- ===== AI 체험 섹션 ===== -->
+<section class="section ai-demo-bg" id="ai-demo" aria-labelledby="ai-demo-h">
+  <div class="wrap">
+    <div class="sh rev">
+      <div class="sh__tag"><span class="badge">직접 체험</span></div>
+      <h2 class="sh__h2" id="ai-demo-h">보고서를 붙여넣으면<br><span class="grad-text">AI가 즉시 분석합니다</span></h2>
+      <p class="sh__p">실제 업무 보고서, 회의록, 메일을 입력해보세요. 핵심만 추려드립니다.</p>
+    </div>
+
+    <div class="ai-demo-grid rev">
+      <!-- 입력 영역 -->
+      <div class="ai-input-box">
+        <div class="ai-input-header">
+          📝 보고서 / 회의록 입력
+        </div>
+        <textarea class="ai-textarea" id="ai-input" placeholder="보고서나 회의록 내용을 여기에 붙여넣으세요...&#10;&#10;예) 이번 주 마케팅팀 주간 보고입니다. Q2 캠페인 집행률이 91%에 달했으며..."></textarea>
+        <div class="ai-examples">
+          <span style="font-size:.75rem;color:var(--txt-3);font-weight:600;align-self:center">예시 보기:</span>
+          <button class="ai-ex-btn" onclick="fillExample(0)">📊 주간 보고</button>
+          <button class="ai-ex-btn" onclick="fillExample(1)">💬 회의록</button>
+          <button class="ai-ex-btn" onclick="fillExample(2)">📈 마케팅 리포트</button>
+        </div>
+        <div class="ai-submit-wrap">
+          <button class="ai-submit" id="ai-btn" onclick="runAI()">
+            <span id="ai-btn-text">⚡ AI 분석 시작</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 결과 영역 -->
+      <div class="ai-result-box">
+        <div class="ai-result-header">
+          🤖 AI 분석 결과
+        </div>
+        <div class="ai-result-body">
+          <!-- 빈 상태 -->
+          <div class="ai-empty" id="ai-empty">
+            <div class="ai-empty-icon">🤖</div>
+            <div>왼쪽에 보고서를 입력하면<br>여기에 AI 분석 결과가 나타납니다.</div>
+          </div>
+          <!-- 로딩 -->
+          <div class="ai-loading" id="ai-loading">
+            <div class="ai-loading-bar" style="width:60%"></div>
+            <div class="ai-loading-bar" style="width:80%"></div>
+            <div class="ai-loading-bar" style="width:45%"></div>
+            <div class="ai-loading-bar" style="width:70%"></div>
+            <div class="ai-loading-bar" style="width:55%"></div>
+          </div>
+          <!-- 결과 -->
+          <div class="ai-answer" id="ai-answer">
+            <div class="ai-summary-card">
+              <div class="ai-card-label">📌 1줄 요약</div>
+              <div class="ai-card-text" id="ai-summary"></div>
+            </div>
+            <div>
+              <div class="ai-card-label" style="margin-bottom:var(--sp2)">🎯 핵심 사항</div>
+              <div class="ai-points" id="ai-points"></div>
+            </div>
+            <div>
+              <div class="ai-card-label" style="margin-bottom:var(--sp2)">⚠️ 리스크 감지</div>
+              <div id="ai-risks" style="display:flex;flex-direction:column;gap:6px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== HOW IT WORKS ===== -->
 <section class="section" id="how" aria-labelledby="how-h">
   <div class="wrap">
@@ -944,6 +1124,136 @@ document.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c
 document.getElementById('searchInput').addEventListener('keydown', e => {
   if(e.key === 'Enter'){ const v = e.target.value.trim(); if(DB[v]) renderResults(v); }
 });
+
+/* ===== AI 체험 기능 ===== */
+const EXAMPLES = [
+  `이번 주 마케팅팀 주간 보고입니다. Q2 디지털 캠페인 예산 집행률이 91%에 달했으며 잔여 예산은 약 180만원입니다. 신규 리드는 목표 대비 108% 초과 달성(47건)했으나, SNS 광고 클릭률이 전주 대비 12% 하락했습니다. 인플루언서 협업 콘텐츠는 도달률 23만명을 기록했습니다. 다음 주 오프라인 팝업 행사 준비 중이며 예산 추가 검토가 필요합니다.`,
+  `[개발팀 스프린트 13 회의록] 일시: 2026.04.24 / 참석: 박형우 차장, 김민준 대리, 최유나 사원\n\n현황: 총 12개 태스크 중 8개 완료, 2개 지연(QA 검수 병목), 2개 진행중. 출시 예정일 4/30 기준 리소스 부족 우려. 개발 인력 1명 추가 투입 필요. 다음 스프린트 시작 전 기술 부채 정리 필요하다는 의견 있음. QA 자동화 도입 논의 예정.`,
+  `2026년 Q1 마케팅 성과 보고서입니다. 총 광고비 3,180만원 집행(예산 대비 99.4%). 전체 ROAS 340%로 목표 초과 달성. 신규 가입자 12,400명(목표 10,000명 대비 124%). 채널별로는 검색광고 ROAS 420%, SNS 광고 280%, 디스플레이 190% 기록. 이탈률은 전분기 대비 8% 개선. 다음 분기 예산 15% 증액 요청 예정.`
+];
+
+const AI_DB = [
+  {
+    keywords: ['마케팅','캠페인','광고','리드','sns'],
+    summary: '마케팅팀 목표 초과 달성했으나 예산 소진 임박 및 SNS 성과 하락으로 다음 주 추가 대응 필요.',
+    points: ['신규 리드 108% 초과 달성 — 영업팀과 즉시 연계 검토','SNS 클릭률 12% 하락 — 크리에이티브 교체 또는 타겟 재설정 필요','오프라인 팝업 예산 추가 승인 — 이번 주 내 결정 필요'],
+    risks: [
+      {level:'red', text:'🔴 잔여 예산 180만원 — D-4 소진 예상, 긴급 승인 필요'},
+      {level:'yellow', text:'🟡 SNS 클릭률 하락 추세 — 방치 시 다음 분기 영향'},
+      {level:'green', text:'🟢 리드 목표 초과 — 영업 파이프라인 양호'}
+    ]
+  },
+  {
+    keywords: ['스프린트','개발','qa','출시','태스크','기술'],
+    summary: '스프린트 13 QA 병목으로 출시 일정 위기 — 인력 보강 및 우선순위 재조정이 이번 주 핵심 과제.',
+    points: ['QA 검수 병목 해소 위해 인력 1명 추가 투입 즉시 검토','4/30 출시일 유지 여부 이번 주 내 경영진 보고 필요','기술 부채 정리 일정 다음 스프린트 계획에 반영'],
+    risks: [
+      {level:'red', text:'🔴 출시일 4/30 위험 — QA 2건 미완료, 일정 재협의 필요'},
+      {level:'yellow', text:'🟡 기술 부채 누적 — 중장기 개발 속도에 영향 가능'},
+      {level:'green', text:'🟢 완료율 67% — 나머지 태스크 집중 시 달성 가능'}
+    ]
+  },
+  {
+    keywords: ['광고비','roas','가입','채널','분기','성과'],
+    summary: 'Q1 광고 전 채널 목표 초과 달성 — 검색광고 효율 최고, 다음 분기 예산 증액으로 성장 가속화 권장.',
+    points: ['검색광고 ROAS 420% — 다음 분기 예산 배분 1순위 채널','신규 가입 12,400명 달성 — 온보딩 경험 개선으로 이탈 추가 방어 필요','디스플레이 ROAS 190% — 효율 낮은 소재 교체 검토'],
+    risks: [
+      {level:'green', text:'🟢 전 채널 목표 초과 — 전반적 캠페인 건강'},
+      {level:'yellow', text:'🟡 디스플레이 효율 저조 — 예산 재배분 검토'},
+      {level:'green', text:'🟢 이탈률 8% 개선 — 제품 경험 향상 효과'}
+    ]
+  }
+];
+
+const DEFAULT_AI = {
+  summary: '보고서를 분석한 결과, 전반적 목표 달성은 양호하나 일부 리스크 항목에 대한 즉각적인 의사결정이 필요합니다.',
+  points: ['핵심 목표 달성 현황 확인 완료 — 세부 수치 검토 권장','지연 또는 미완료 항목 집중 모니터링 필요','다음 주 액션 아이템 담당자 지정 및 기한 설정 권장'],
+  risks: [
+    {level:'yellow', text:'🟡 일부 항목 진행 지연 — 원인 파악 및 지원 검토'},
+    {level:'green', text:'🟢 전반적 팀 목표 달성률 양호'},
+    {level:'green', text:'🟢 커뮤니케이션 및 보고 체계 정상'}
+  ]
+};
+
+function fillExample(i) {
+  document.getElementById('ai-input').value = EXAMPLES[i];
+}
+
+function getAIData(text) {
+  const t = text.toLowerCase();
+  for (const d of AI_DB) {
+    if (d.keywords.some(k => t.includes(k))) return d;
+  }
+  return DEFAULT_AI;
+}
+
+async function typeText(el, text, speed = 18) {
+  el.innerHTML = '';
+  for (let i = 0; i < text.length; i++) {
+    el.innerHTML = text.slice(0, i + 1) + '<span class="cursor"></span>';
+    await new Promise(r => setTimeout(r, speed));
+  }
+  el.innerHTML = text;
+}
+
+async function runAI() {
+  const input = document.getElementById('ai-input').value.trim();
+  if (!input) {
+    document.getElementById('ai-input').focus();
+    document.getElementById('ai-input').style.borderColor = 'var(--error)';
+    setTimeout(() => document.getElementById('ai-input').style.borderColor = '', 1500);
+    return;
+  }
+
+  const btn = document.getElementById('ai-btn');
+  const btnText = document.getElementById('ai-btn-text');
+
+  // 로딩 시작
+  btn.disabled = true;
+  btnText.textContent = '분석 중...';
+  document.getElementById('ai-empty').style.display = 'none';
+  document.getElementById('ai-answer').style.display = 'none';
+  document.getElementById('ai-loading').style.display = 'flex';
+
+  await new Promise(r => setTimeout(r, 2200));
+
+  const data = getAIData(input);
+
+  // 결과 표시
+  document.getElementById('ai-loading').style.display = 'none';
+  document.getElementById('ai-answer').style.display = 'flex';
+
+  // 1줄 요약 타이핑 효과
+  await typeText(document.getElementById('ai-summary'), data.summary, 16);
+
+  // 핵심 사항
+  const pEl = document.getElementById('ai-points');
+  pEl.innerHTML = '';
+  for (let i = 0; i < data.points.length; i++) {
+    const dot = ['dot-1','dot-2','dot-3'][i];
+    const div = document.createElement('div');
+    div.className = 'ai-point';
+    div.innerHTML = `<div class="ai-point-dot ${dot}">${i+1}</div><div class="ai-point-text"></div>`;
+    pEl.appendChild(div);
+    await typeText(div.querySelector('.ai-point-text'), data.points[i], 10);
+    await new Promise(r => setTimeout(r, 80));
+  }
+
+  // 리스크
+  const rEl = document.getElementById('ai-risks');
+  rEl.innerHTML = '';
+  for (const r of data.risks) {
+    const cls = {red:'risk-red', yellow:'risk-yellow', green:'risk-green'}[r.level];
+    const div = document.createElement('div');
+    div.className = `ai-risk-row ${cls}`;
+    div.textContent = r.text;
+    rEl.appendChild(div);
+    await new Promise(r2 => setTimeout(r2, 150));
+  }
+
+  btn.disabled = false;
+  btnText.textContent = '⚡ 다시 분석';
+}
 </script>
 </body>
 </html>
